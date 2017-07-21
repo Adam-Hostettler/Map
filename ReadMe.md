@@ -1,12 +1,12 @@
-#Neighborhood Map - Green Bay, WI
+# Neighborhood Map - Green Bay, WI
 
-##Summary
+## Summary
 A single-page application that uses Google Maps API and FourSquare API to produce a map of Green Bay, WI and some of my favorite locations.
 
-##How to use
+## How to use
 Open your favorite browser. Press `ctrl + o` navigate to the index.html file. Click on it then click open. You can click on any of the markers or their names in the list to get more information about that locations. You can use the drop down box to filter the locations. 
 
-##Helpful Links
+## Helpful Links
 [https://discussions.udacity.com/t/how-to-start-doing-map-project/206826](https://discussions.udacity.com/t/how-to-start-doing-map-project/206826)
 [http://knockoutjs.com/documentation/introduction.html](http://knockoutjs.com/documentation/introduction.html)
 [https://developers.google.com/maps/documentation](https://developers.google.com/maps/documentation)
