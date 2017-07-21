@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam's Google Map - Green Bay, WI</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <p id="nav-header">Green Bay, WI</p>
+        <select id="dropDown" data-bind="options: locations, optionsText: function(item) {return item.markerData.title}, optionsCaption: 'Pick a Location',  value: selectedLocation, event: {change:onChange}"></select>
+        <!-- binding the select to the locations observable. Populating the options. setting the default value. Storing the selection to selectedLocation and firing onChange. -->
+        <p id="list-header">List of locations</p>
+        <ul data-bind="foreach: locations, visible: !show()"> <!-- binding to each locations and setting visible to default. -->
+          <li data-bind="text: markerData.title, event: {click:function(item) {populateInfoWindow(item, null)}}"></li> <!-- adding click event to call the infowindows -->
+        </ul>
+        <ul data-bind="visible: show(), with: selectedLocation"> <!-- setting default vaule for visible and using with due to undefined possible. -->
+          <li data-bind="text: markerData.title, event: {click:function(item) {populateInfoWindow(item, null)}}"></li> <!-- adding click event to call the infowindows -->
+        </ul>
+      </div>
+      <div id="map"></div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/knockout-3.4.2.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArf42IlGKjge5IQYd_-wZ8HgZYInT19WY&v=3.28&callback=initialize" onerror="errorHandle()"></script> <!-- error handling if google fails to load. -->
+  </body>
+</html>
